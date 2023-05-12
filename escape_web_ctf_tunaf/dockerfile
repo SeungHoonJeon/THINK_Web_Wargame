@@ -1,0 +1,41 @@
+# 베이스 이미지 설정
+FROM ubuntu:latest
+
+#사용자 입력 요청 무시
+ARG DEBIAN_FRONTEND=noninteractive
+
+# 필요한 소프트웨어 패키지 설치
+RUN apt-get update && \
+    apt-get -y install apache2 php libapache2-mod-php php-mysql mariadb-server vim
+
+#php 환경 설정
+RUN sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/*/apache2/php.ini
+
+# MariaDB 데이터베이스 설정
+RUN service mariadb start && \
+    mysql -e "CREATE DATABASE think CHARACTER SET utf8;" && \
+    mysql -e "CREATE USER 'tunaf'@'localhost' IDENTIFIED BY 'qwe123';" && \
+    mysql -e "GRANT ALL PRIVILEGES ON think.* TO 'tunaf'@'localhost';" && \
+    mysql -e "FLUSH PRIVILEGES;" && \
+    mysql -e "USE think; CREATE TABLE think_board (idx int not null auto_increment,\
+    title varchar(300) not null,\
+    description varchar(1000) not null,\
+    author varchar(30) not null,\
+    id varchar(50) not null,\
+    access_key varchar(30) null,\
+    primary key(idx)\
+    );"\
+    mysql -e "insert into think_board(title,description,author,id,access_key) value('secret','ctf{}','admin','admin','long password');"
+
+#apache2 설정
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# source file 복사
+RUN rm -rf /var/www/html
+COPY ./html /var/www/html
+
+# 포트 설정
+EXPOSE 80
+
+# 컨테이너 실행 시 실행할 명령어 설정
+CMD service mariadb start && /usr/sbin/apache2ctl -D FOREGROUND

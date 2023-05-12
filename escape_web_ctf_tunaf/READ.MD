@@ -1,0 +1,1 @@
+dockerfile에 password랑 ctf를 추가로 입력할 것.

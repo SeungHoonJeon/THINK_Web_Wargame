@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web1:
+    build:
+      context: ./escape_web_ctf_tunaf
+    ports:
+      - "4444:80"
+  web2:
+      build:
+        context: ./think_vul_site
+      ports:
+        - "4445:80"
