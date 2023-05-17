@@ -75,8 +75,8 @@
                 <div class="submit">
                     
                     <?php
-                        $id = $_SESSION['id'] ?? NULL;
-                        if($row['id'] == $id){
+                        $id = $_SESSION['name'] ?? NULL;
+                        if($row['author'] == $id){
                             echo "<button onclick=\"location.href='./board_modify.php?idx={$_GET['idx']}'\">수정</button>";
                             echo "<button onclick=\"location.href='./action.php?mode=delete&idx={$_GET['idx']}'\">삭제</button>";
                         }

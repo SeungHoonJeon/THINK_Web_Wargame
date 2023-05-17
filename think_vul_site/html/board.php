@@ -172,7 +172,7 @@
             </fieldset>
             <fieldset id="board_list">
                 <legend><a href="./board.php"></legend>
-                    <?php require('./index/index_submenu.php');?>>
+                    <?php require('./index/index_submenu.php');?>
             </fieldset>
         </aside>
     </div>
