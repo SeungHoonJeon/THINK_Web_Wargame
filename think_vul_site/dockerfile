@@ -22,7 +22,7 @@ RUN service mariadb start && \
     create table think_board(\
 	id int not null auto_increment,\
 	title varchar(300) not null,\
-	description varchar(300) not null,\
+	description varchar(600) not null,\
 	author varchar(30) not null,\
 	created datetime not null,\
 	file_real varchar(50),\
