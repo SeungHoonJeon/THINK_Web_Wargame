@@ -1,0 +1,244 @@
+body, html{
+    margin : 0;
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color :#eeeeee;
+    background-image : url(../img/2.gif);
+    background-repeat : no-repeat;
+    background-position : center 8%;
+    background-size : 100% 600px;
+}
+header{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    border-style:solid;
+    width:100%;
+    height:100px;
+    background-color:#bcbcbc;
+}
+header>a{
+    display: inline-block;
+    position : relative;
+    top : -10px;
+    left : 10px;
+    font-size:90px;
+    letter-spacing: 20px;
+    text-decoration:none;
+    color :black;
+}
+header>a:hover{
+    color:yellow;
+}
+header>#top_list{
+    display: inline-block;
+    position : relative;
+    margin-top : 60px;
+    margin-left : auto;
+}
+header>#top_list>ul{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    margin : 0;
+    padding : 0;
+}
+header>#top_list>ul>li{
+    margin-left: 10px;
+    margin-right: 10px;
+    list-style-type : none;
+}
+header>#top_list>ul>li>a{
+    text-decoration : none;
+    font-size : 30px;
+    color :black;
+}
+header>#top_list>ul>li>a:hover{
+    color:yellow;
+}
+
+/**/
+
+nav{
+    display:flex;
+    flex-direction : column;
+    flex-wrap:wrap;
+    border-style : solid;
+    width:80%;
+    margin:auto;
+    margin-top:100px;
+    margin-bottom:100px;
+}
+nav>#nav_list{
+    background-color: #bcbcbc;
+    width: 100%;
+    border-bottom-style: solid
+}
+nav>#nav_list>ul{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-around;
+}
+nav>#nav_list>ul>li{
+    list-style-type : none;
+}
+nav>#nav_list>ul>li>a{
+    text-decoration : none;
+    color :black;
+    font-size : 40px;
+}nav>#nav_list>ul>li>a:hover{
+    color:yellow;
+}
+nav>#nav_view{
+    width:100%;
+    height:300px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:center;
+}
+
+/**/
+#content{
+    /*background-color: #eeeeee;*/
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    width:80%;
+    height: 1000px;
+    margin:auto;
+}
+#content>section,#content>aside{
+    width:15%;
+}
+#content>section{
+    border-style:solid;
+    background-color:#bcbcbc;
+}
+#content>section>ul{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    height:100%;
+    margin-left:10px;
+    
+}
+#content>section>ul>li>a{
+    text-decoration:none;
+    font-size: 30px;
+    letter-spacing: 20px;
+    color:black;
+}
+#content>section>ul>li>a:hover{
+    color:yellow;
+}
+#content>article{
+    display:flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width:60%
+}
+article>fieldset{
+    background-color : #bcbcbc;
+}
+article>fieldset>legend{
+    font-size:40px;
+}
+article>fieldset>legend>a{
+    text-decoration:none;
+    color:black;
+}
+article>fieldset>legend>a:hover{
+    color:yellow;
+}
+.main li>a{
+    font-size:30px;
+    text-decoration:none;
+    color:black;
+}
+.main_image ul{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    list-style-type:none;
+}
+.main_image ul>li{
+    margin-right:30px;
+}
+.main_image ul>li>img{
+    width : 500px;
+    height: 300px;
+}
+.main li>a:hover{
+    color:yellow;
+}
+aside{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+}
+aside>#my_page{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    height:70%;
+    background-color:#bcbcbc;
+}
+aside>#my_page>legend{
+    font-size:30px;
+    color:black;
+}
+aside>#my_page img{
+    width:200px;
+    height:200px;
+}
+aside>#my_page div{
+    font-size:30px;
+}
+aside>#my_page a{
+    font-size:30px;
+    text-decoration:none;
+    color:black;
+}
+aside>#my_page a:hover{
+    color:yellow;
+}
+aside>#board_list{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    height:250px;
+    margin-top : auto;
+    background-color:#bcbcbc;
+}
+aside>#board_list a{
+    font-size:30px;
+    color:black;
+    text-decoration:none;
+}
+aside>#board_list a:hover{
+    color:yellow;
+}
+aside>#board_list ul{
+    list-style-type:none;
+}
+footer{
+    margin-top:200px;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:400px;
+    background-color:#bcbcbc;
+}
+footer div{
+    font-size: 50px;
+}

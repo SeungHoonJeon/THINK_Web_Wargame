@@ -2,11 +2,41 @@ version: '3'
 services:
   web1:
     build:
-      context: ./escape_web_ctf_tunaf
+      context: ./think_vul_site
     ports:
-      - "4444:80"
+      - "4440:80"
   web2:
-      build:
-        context: ./think_vul_site
-      ports:
-        - "4445:80"
+    build:
+      context: ./filedownload1
+    ports:
+      - "4446:80"
+  web3:
+    build:
+      context: ./escape_room
+    ports:
+      - "4447:80"
+  web4:
+    build:
+      context: ./fileupload1
+    ports:
+      - "4448:80"
+  web5:
+    build:
+      context: ./OS_command_injection1
+    ports:
+      - "4449:80"
+  web6:
+    build:
+      context: ./fileupload2
+    ports:
+      - "4450:80"
+  web7:
+    build:
+      context: ./sqli1
+    ports:
+      - "4451:80"
+  web8:
+    build:
+      context: ./sqli2
+    ports:
+      - "4452:80"

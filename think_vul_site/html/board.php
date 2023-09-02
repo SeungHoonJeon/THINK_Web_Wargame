@@ -162,10 +162,13 @@
                     <?php
                         if(!empty($_SESSION['id'])){
                             echo "<div>"."이름:".$_SESSION['name']."님"."<br>"."</div>";
-                            echo "<a href=\"./write.php\">게시글 작성</a>"."<br>";
                             echo "<a href=\"./mypage.php\">내 정보</a>"."<br>";
-                            echo "<a href=\"./logout.php\">로그아웃</a>"."<br>";
-                        }else{
+			    if($_SESSION['name'] == "admin"){
+                            	echo "<a href=\"./pingcheck.php\">내 정보</a>"."<br>";
+			    }
+			    echo "<a href=\"./logout.php\">로그아웃</a>"."<br>";
+			}
+			else{
                             echo "<a href=\"./login.php\">로그인</a>";
                         }
                     ?>

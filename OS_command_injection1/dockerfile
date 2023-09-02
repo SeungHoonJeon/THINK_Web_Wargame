@@ -1,0 +1,28 @@
+# 베이스 이미지 설정
+FROM ubuntu:latest
+
+#사용자 입력 요청 무시
+ARG DEBIAN_FRONTEND=noninteractive
+
+# 필요한 소프트웨어 패키지 설치
+RUN apt-get update && \
+    apt-get -y install apache2 php libapache2-mod-php php-mysql vim iputils-ping
+
+#php 환경 설정
+RUN sed -i 's/;extension=mysqli/extension=mysqli/g' /etc/php/*/apache2/php.ini
+RUN sed -i 's/display_errors = Off/display_errors = On/g' /etc/php/*/apache2/php.ini
+
+#apache2 설정
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# source file 복사
+RUN rm -rf /var/www/html
+RUN mkdir -p /tmp/go/lego/Lego
+COPY ./html /var/www/html
+COPY ./flag /tmp/go/lego/Lego
+
+# 포트 설정
+EXPOSE 80
+
+# 컨테이너 실행 시 실행할 명령어 설정
+CMD /usr/sbin/apache2ctl -D FOREGROUND

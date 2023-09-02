@@ -105,6 +105,7 @@
             echo "<script>alert('수정이 정상적으로 완료되었습니다.');location.href='./index.php';</script>";
         }
     }else if($mode == "write"){
+            $uploadFile = iconv("UTF-8","CP949",$_FILES["userfile"]["name"]) ?? NULL;
         if(!empty($_FILES["userfile"]["name"])){
             $upload_path = "./upload";
             $uploadFile = iconv("UTF-8","CP949",$_FILES["userfile"]["name"]) ?? NULL;
